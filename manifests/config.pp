@@ -83,7 +83,7 @@ class rabbitmq::config {
     owner   => '0',
     group   => '0',
     mode    => '0644',
-    notify  => Class['rabbitmq::service'],
+    before  => Class['rabbitmq::service'],
   }
 
   file { 'rabbitmq-env.config':
