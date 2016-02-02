@@ -229,7 +229,7 @@ class rabbitmq(
   anchor { 'rabbitmq::end': }
 
   Anchor['rabbitmq::begin'] -> Class['::rabbitmq::install']
-    -> Class['::rabbitmq::config'] ~> Class['::rabbitmq::service']
+    -> Class['::rabbitmq::config'] -> Class['::rabbitmq::service']
     -> Class['::rabbitmq::management'] -> Anchor['rabbitmq::end']
 
   # Make sure the various providers have their requirements in place.
